@@ -12,8 +12,6 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
 import MovieModal from "../MovieModal/MovieModal";
 
-import styles from "./App.module.css";
-
 export default function App() {
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
