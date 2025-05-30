@@ -42,7 +42,9 @@ export default function App() {
     if (isSuccess && data.results.length == 0) {
       toast.error("No movies found for your request.");
     }
-  }, [data, isSuccess]);
+     }, [data, isSuccess]);
+    
+    const results = data?.results ?? [];
 
 
     return (
@@ -67,8 +69,8 @@ export default function App() {
             {isLoading && <Loader />}
             {isError && <ErrorMessage />}
 
-            {data?.results.length > 0 && (
-                <MovieGrid movies={data.results} onSelect={handleSelectMovie} />
+            {results.length > 0 && (
+                <MovieGrid movies={results} onSelect={handleSelectMovie} />
             )}
       {selectedMovie !== null && (
         <MovieModal movie={selectedMovie} onClose={closeModal} />

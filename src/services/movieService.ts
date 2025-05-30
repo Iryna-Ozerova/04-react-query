@@ -5,6 +5,7 @@ const API_KEY = import.meta.env.VITE_TMDB_TOKEN;
 
 export interface MoviesHttpResponse {
   results: Movie[];
+  total_pages: number;
 }
 
 export const fetchMovies = async (
