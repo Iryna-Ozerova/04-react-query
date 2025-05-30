@@ -29,8 +29,6 @@ export default function App() {
     setPage(1);
         setQuery(query);
 };
-   
-    const totalPages = data?.total_pages ?? 0;
     
     const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
     
@@ -43,6 +41,8 @@ export default function App() {
       toast.error("No movies found for your request.");
     }
      }, [data, isSuccess]);
+    
+     const totalPages = data?.total_pages ?? 0;
     
     const results = data?.results ?? [];
 
