@@ -29,8 +29,6 @@ export default function App() {
     setPage(1);
         setQuery(query);
 };
-    const results = data?.results ?? [];
-    
     const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
     
     const handleSelectMovie = (movie: Movie) => setSelectedMovie(movie);
@@ -43,8 +41,9 @@ export default function App() {
     }
      }, [data, isSuccess]);
     
-     const totalPages = data?.total_pages ?? 0;
+    const totalPages = data?.total_pages ?? 0;
 
+    const results = data?.results ?? [];
 
 
     return (
